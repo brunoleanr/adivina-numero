@@ -3,6 +3,7 @@ package com.jona.adivinanumero.demo;
 import java.io.IOException;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,11 @@ public class ApiDemo {
 	@GetMapping("/metodoGet")
 	public String metodoGet(@RequestParam("data") String data) {
 		return "METODO GET " + data;
+	}
+	
+	@GetMapping("/metodoGetOblig/{data}")
+	public String metodoGetOblig(@PathVariable("data") String data) {
+		return "METODO GET CON PARAMETRO OBLIGATORIO " + data;
 	}
 
 	@PostMapping("/metodoPost")
