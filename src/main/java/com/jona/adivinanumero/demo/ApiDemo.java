@@ -15,6 +15,11 @@ import com.jona.adivinanumero.util.JsonUtil;
 @RestController
 @RequestMapping("api")
 public class ApiDemo {
+	
+	@GetMapping("/metodoSimple")
+	public String metodoSimple() {
+		return "METODO GET SIMPLE";
+	}
 
 	@GetMapping("/metodoGet")
 	public String metodoGet(@RequestParam("data") String data) {
