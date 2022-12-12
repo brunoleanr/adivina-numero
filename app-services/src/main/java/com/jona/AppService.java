@@ -13,24 +13,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.jona.config.Config;
-import com.jona.entity.Usuario;
 
 @Produces({ MediaType.APPLICATION_JSON })
 @Consumes({ "*/*" })
 @Path("/")
-public class AppRestService {
+public class AppService {
 
 	@SuppressWarnings("unused")
-	private static final Logger LOG = LoggerFactory.getLogger(AppRestService.class);
-	
+	private static final Logger LOG = LoggerFactory.getLogger(AppService.class);
+
 	@Inject
-	private UsuarioEjb usuarioEjb;
-	
-	@GET
-	@Path("/usuario")
-	public Usuario usuarioEjb() {
-		return usuarioEjb.getUsuario();
-	}
+	private AppEjb appEjb;
 
 	@GET
 	@Path("/info")
