@@ -58,9 +58,5 @@ public abstract class Juego {
 		this.nVidas = nVidas;
 		this.nVidasOriginales = nVidas;
 	}
-
-	// método abstracto Juega que no tome parámetros
-
-	public abstract String juega(Integer numero);
 		
 }
