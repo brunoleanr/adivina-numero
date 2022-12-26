@@ -58,5 +58,9 @@ public abstract class Juego {
 		this.nVidas = nVidas;
 		this.nVidasOriginales = nVidas;
 	}
+	
+	interface Jugable{
+		public void juega();
+	}
 		
 }
