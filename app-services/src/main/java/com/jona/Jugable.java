@@ -5,5 +5,5 @@ public interface Jugable {
 
 	String muestraNombre();
 
-	void muestraInfo();
+	String muestraInfo();
 }

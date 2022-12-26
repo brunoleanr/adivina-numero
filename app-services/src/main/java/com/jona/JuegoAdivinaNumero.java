@@ -60,7 +60,8 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 
 	}
 
-	public void muestraInfo() {
+	public String muestraInfo() {
+		return "Instructivo del juego";
 
 	}
 
