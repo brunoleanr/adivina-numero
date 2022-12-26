@@ -14,6 +14,10 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero {
 		}
 	}
 	
+	public String muestraNombre() {
+		return "Adivina un número par";
+	}
+	
 
 
 }
