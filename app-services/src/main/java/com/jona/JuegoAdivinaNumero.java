@@ -3,7 +3,7 @@ package com.jona;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class JuegoAdivinaNumero extends Juego {
+public class JuegoAdivinaNumero extends Juego implements Jugable {
 
 	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(JuegoAdivinaNumero.class);
@@ -49,6 +49,18 @@ public class JuegoAdivinaNumero extends Juego {
 
 	public boolean validaNumero(int numero) {
 		return true;
+	}
+
+	public void juega() {
+
+	}
+
+	public void muestraNombre() {
+
+	}
+
+	public void muestraInfo() {
+
 	}
 
 }

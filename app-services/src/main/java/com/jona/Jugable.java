@@ -1,9 +1,9 @@
 package com.jona;
 
 public interface Jugable {
-	public void juega();
+	void juega();
 
-	public void muestraNombre();
+	void muestraNombre();
 
-	public void muestraInfo();
+	void muestraInfo();
 }
