@@ -55,7 +55,8 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 
 	}
 
-	public void muestraNombre() {
+	public String muestraNombre() {
+		return "Adivina un número";
 
 	}
 
