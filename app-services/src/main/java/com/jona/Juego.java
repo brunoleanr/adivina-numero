@@ -1,12 +1,19 @@
 package com.jona;
 
+import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.jona.entity.Usuario;
+
 @ApplicationScoped // Esto va antes de crear la clase
-public abstract class Juego {
+public class Juego {
 
 	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(Juego.class);
@@ -14,6 +21,9 @@ public abstract class Juego {
 	private Integer nVidas = 0;
 	private int nVidasOriginales = 0;
 	private int record = 0;
+
+	@Inject
+	private EntityManager entityManager;
 
 	// MEtodo mostrar vidas restantes
 	public String muestraVidasRestantes() {
@@ -57,6 +67,30 @@ public abstract class Juego {
 		LOG.info("Setnvidas - " + nVidas.toString());
 		this.nVidas = nVidas;
 		this.nVidasOriginales = nVidas;
+	}
+
+	@SuppressWarnings("unchecked")
+	public String getUserName(Boolean usaEntidad) {
+
+		String nombre = null;
+
+		if (usaEntidad) {
+			String query = "SELECT * FROM usuario WHERE id = 1";
+
+			Query nativeQuery = entityManager.createNativeQuery(query);
+
+			List<Object[]> resultList = (List<Object[]>) nativeQuery.getResultList();
+
+			for (Object[] array : resultList) {
+				nombre = (String) array[1];
+			}
+
+		} else {
+			nombre = entityManager.find(Usuario.class, 1L).getNombre();
+		}
+
+		return nombre;
+
 	}
 
 }

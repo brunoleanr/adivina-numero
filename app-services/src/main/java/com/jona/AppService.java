@@ -125,5 +125,11 @@ public class AppService {
 	public String muestraInfo() {
 		return juegaAdivinaNumero.muestraInfo();
 	}
+	
+	@GET
+	@Path("/getUserName")
+	public String getUserName(@QueryParam("usaEntidad") Boolean usaEntidad) {
+		return juego.getUserName(usaEntidad);
+	}
 
 }
