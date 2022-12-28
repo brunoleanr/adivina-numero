@@ -96,22 +96,34 @@ public class AppService {
 	@Path("/iniciarJuegoAdivinaNumero")
 	public void iniciarJuegoAdivinaNumero(@QueryParam("numAdivinar") int numAdivinar,
 			@QueryParam("nVidas") Integer nVidas) {
-		LOG.info("iniciar juego - " +nVidas.toString());
+		LOG.info("iniciar juego - " + nVidas.toString());
 		juegaAdivinaNumero = new JuegoAdivinaNumero(nVidas, numAdivinar);
 	}
-	
+
 	@GET
 	@Path("/iniciarJuegoAdivinaPar")
 	public void iniciarJuegoAdivinaPar(@QueryParam("numAdivinar") int numAdivinar,
 			@QueryParam("nVidas") Integer nVidas) {
 		juegaAdivinaNumero = new JuegoAdivinaPar(nVidas, numAdivinar);
 	}
-	
+
 	@GET
 	@Path("/iniciarJuegoAdivinaImpar")
 	public void iniciarJuegoAdivinaImpar(@QueryParam("numAdivinar") int numAdivinar,
 			@QueryParam("nVidas") Integer nVidas) {
 		juegaAdivinaNumero = new JuegoAdivinaImpar(nVidas, numAdivinar);
+	}
+
+	@GET
+	@Path("/muestraNombre")
+	public String muestraNombre() {
+		return juegaAdivinaNumero.muestraNombre();
+	}
+
+	@GET
+	@Path("/muestraInfo")
+	public String muestraInfo() {
+		return juegaAdivinaNumero.muestraInfo();
 	}
 
 }
