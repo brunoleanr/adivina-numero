@@ -18,7 +18,7 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 
 	// Implementa el método Juega de la clase base:
 	public String juega(Integer numero) {
-		//5.0
+
 		if (validaNumero(numero) == false) {
 			return "Numero incorrecto ingrese otro numero";
 		}
