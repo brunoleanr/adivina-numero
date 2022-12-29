@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AutenticacionService } from '../../autenticacion/autenticacion.service';
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -9,13 +7,10 @@ import { AutenticacionService } from '../../autenticacion/autenticacion.service'
 })
 export class InicioComponent implements OnInit {
 
-  constructor(private autenticacionService: AutenticacionService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  cerrarSesion() {
-    this.autenticacionService.cerrarSesion();
-  }
 
 }
